@@ -32,5 +32,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/caesar_cipher.
+Bug reports and pull requests are welcome on GitHub at https://github.com/MMVS-79/caesar_cipher.
 # caesar_cipher
