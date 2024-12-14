@@ -33,6 +33,3 @@ module InputHandler
     puts "You entered the string: '#{string_input}' and the integer: #{integer_input}"
   end
 end
-
-include InputHandler
-InputHandler::get_user_input

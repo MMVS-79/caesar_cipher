@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+# Load the main code from lib
+require_relative '../lib/caesar_cipher'
+
+#making it so InputHandler module from ../lib/caesar_cipher is accesible
+include InputHandler
+InputHandler::get_user_input #calling method
