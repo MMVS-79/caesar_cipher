@@ -8,10 +8,10 @@ module CaesarCipher
   # Method to encode a message
   def encode(message, shift)
     message.chars.map do |char|
-      if char.match(/[a-z]/)
+      if char.match(/[a-z]/) #ASCII value of 'z' is 122
         # Shift lowercase letters
         ((char.ord - 'a'.ord + shift) % 26 + 'a'.ord).chr #% 26 makes sure that after shifting a letter, the result is always a valid letter within the alphabet
-      elsif char.match(/[A-Z]/) #ASCII value of 'z' is 122
+      elsif char.match(/[A-Z]/) 
         # Shift uppercase letters
         ((char.ord - 'A'.ord + shift) % 26 + 'A'.ord).chr
       else
