@@ -4,6 +4,28 @@ require_relative "caesar_cipher/version"
 
 module CaesarCipher
   class Error < StandardError; end
+
+  # Method to encode a message
+  def encode(message, shift)
+    message.chars.map do |char|
+      if char.match(/[a-z]/)
+        # Shift lowercase letters
+        ((char.ord - 'a'.ord + shift) % 26 + 'a'.ord).chr
+      elsif char.match(/[A-Z]/)
+        # Shift uppercase letters
+        ((char.ord - 'A'.ord + shift) % 26 + 'A'.ord).chr
+      else
+        # Keep non-alphabetic characters unchanged
+        char
+      end
+    end.join
+  end
+
+  # Method to decode a message
+  def decode(message, shift)
+    # Decoding is just encoding with a negative shift
+    encode(message, -shift)
+  end
   
 end
 
