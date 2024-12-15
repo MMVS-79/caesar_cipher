@@ -1,8 +1,13 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 # Load the main code from lib
 require_relative '../lib/caesar_cipher'
 
-#making it so InputHandler module from ../lib/caesar_cipher is accesible
-include InputHandler
-InputHandler::get_user_input #calling method
+# adding a main module
+module Main
+  # making it so InputHandler module from ../lib/caesar_cipher is accesible
+  extend InputHandler
+end
+
+Main.user_input # calling method
