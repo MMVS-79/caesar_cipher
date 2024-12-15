@@ -10,10 +10,10 @@ module CaesarCipher
     message.chars.map do |char|
       if char.match(/[a-z]/) #ASCII value of 'z' is 122
         # Shift lowercase letters
-        ((char.ord - 'a'.ord + shift) % 26 + 'a'.ord).chr #% 26 makes sure that after shifting a letter, the result is always a valid letter within the alphabet
+        (((char.ord - 'a'.ord + shift) + 26) % 26 + 'a'.ord).chr #% 26 makes sure that after shifting a letter, the result is always a valid letter within the alphabet
       elsif char.match(/[A-Z]/) 
         # Shift uppercase letters
-        ((char.ord - 'A'.ord + shift) % 26 + 'A'.ord).chr
+        (((char.ord - 'A'.ord + shift) + 26) % 26 + 'A'.ord).chr # the + 26 is to handle negative shifts (in the use of the decode method below)
       else
         # Keep non-alphabetic characters unchanged
         char
